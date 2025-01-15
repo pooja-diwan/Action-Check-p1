@@ -1,11 +1,19 @@
-name: Application-CI 
+name: hello-world-example
 on:
   push:
-    branches: [ main ]
-jobs: 
-  build:
-    runs-on: ubuntu-latest 
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Run a one-line script
-        run: write-host Hello, world!
+      -
+        name: Say Hello
+        run: echo "Hello world!"
+      -
+        name: Do stuff
+        run: |
+          echo "Step 1..."
+          echo "Step 2..."
+          echo "Step 3..."
+      -
+        name: Say Goodbye
+        run: echo "Goodbye!"
